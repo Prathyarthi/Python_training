@@ -8,9 +8,23 @@ genai.configure(api_key=os.environ.get("API_KEY"))
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-code = '''n = 5
-for i in range(n):
-    print(" "*(n-i) + "* "*(i+1))'''
+# code = '''n = 5
+# for i in range(n):
+#     print(" "*(n-i) + "* "*(i+1))'''
+
+code = '''chocolates = list(map(int,input("Enter number of chocolates in each jar: ").split()))
+N = len(chocolates)
+count = 0
+
+for i in chocolates:
+    if i==0:
+        continue
+    if i%3==0:
+        count = count + (i//3)
+    else:
+        count = count + (i//3) + 1
+
+print(count)'''
 
 language = ""
 
